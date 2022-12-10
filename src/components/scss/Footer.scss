@@ -1,0 +1,41 @@
+.container{
+
+  .footer{
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+    padding: 10px 40px;
+    .footerFirst{
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100%;
+      gap: 4px;
+      img{
+        width: 24px;
+        object-fit: contain;
+      }
+    }
+    .FooterSecond{
+      display: flex;
+      flex: 1px;
+      justify-content: space-around;
+      max-width: 480px;
+      .footerSecondInside{
+        text-decoration: none;
+
+        h4{
+          margin: 10px;
+          cursor: pointer;
+          .link{
+            text-decoration: none;
+            color: white;
+          }
+        }
+      }
+    }
+  
+  }
+
+}

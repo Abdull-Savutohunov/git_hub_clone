@@ -1,0 +1,75 @@
+.left{
+  max-width: 450px;
+  margin: -40px 0 0 10%;
+  position: absolute;
+  .image{
+    height: 250px;
+    width: 250px;
+    position: relative;
+    margin: 4px auto;
+    img{
+      width: 100%;
+      object-fit: contain;
+      border-radius: 50%;
+
+    }
+  }
+  .emoticonBox{
+    height: 38px;
+    width: 38px;
+    position: absolute;
+    top: 160px;
+    right: -8px;
+    background-color: black;
+    border-radius: 50%;
+    border: 1px solid wheat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: wheat;
+
+    .emoticon{
+      width: 20px;
+      height: 20px;
+
+    }
+  }
+  .leftDetails{
+    height: 200px;
+    width: 100%;
+    color: rgb(29, 28, 28);
+    h2{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 26px;
+      margin: 24px auto;
+    }
+    button{
+      font-size: 14px;
+      font-weight: bold;
+      padding: 8px;
+      width: 100%;
+      border-radius: 8px;
+      border: none;
+      background-color: gray;
+      border: 1px solid rgb(80, 80, 80);
+      color: rgb(57, 53, 53);
+      cursor: pointer;
+    }
+    .folowContainer{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3px;
+
+      .dot{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: -100px;
+      }
+      
+    }
+  }
+}
