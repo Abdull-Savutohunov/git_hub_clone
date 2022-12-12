@@ -58,7 +58,7 @@ const Menu = () => {
             </ul>
           </div>
           <div className="lineThree"/>
-          <p><Link to='/profile'>Your profile</Link></p>
+          <p><Link to='/'>Your profile</Link></p>
           <div className='profilenav'>
             {
               MyProfileList.map(item => (
