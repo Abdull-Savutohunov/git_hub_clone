@@ -21,8 +21,6 @@
       position: relative;
       display: flex;
       gap: 20px;
-
-
       .search_input{
         padding: 7px;
         width: 30;
@@ -33,6 +31,21 @@
         outline: none;
         border: solid 1px gray;
         color: white;
+      }
+    }
+    .rightNav {
+      display: flex;
+      align-items: center;
+      width: 110px;
+      justify-content: space-between;
+      .bell{
+        width: 18px;
+      }
+      .navRightIcons{
+        width: 30px;
+        display: flex;
+        align-items: center;
+
       }
     }
 
@@ -202,7 +215,16 @@
       .dark_mode_btn{
         display: block;
       }
+      .rightNav {
+        display:none;
+        .bell{
+          display: none;
+        }
+        .navRightIcons{
+          display: none;
 
+        }
+      }
       .menu_data{
         display: none;
       }

@@ -10,7 +10,7 @@ import Test from '../components/Header'
 
 const Profile = () => {
   const [myProfile , setMyProfile] = React.useState('')
-  // console.log(myProfile);
+  console.log(myProfile);
 
   useEffect(() => {
     endpoints.UserMore('Abdull-Savutohunov').then(r => {

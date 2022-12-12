@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import cls from './Test.module.scss'
 import { BsGithub } from 'react-icons/bs'
-import { AiOutlineMenu } from 'react-icons/ai'
+import { GiTBrick } from 'react-icons/gi'
 import { Link } from 'react-router-dom'
 import { ProfileList } from '../../utils'
 import { endpoints } from '../../configs'
+import {FiBell, FiPlus} from "react-icons/fi";
+import {IoMdArrowDropdown} from "react-icons/io";
 
 const Test = () => {
   const [open , setOpen] = useState(false)
@@ -51,9 +53,17 @@ const Test = () => {
               onChange={e => setUserName(e.target.value)}
             />
           </div>
-          <div onClick={() => {setOpen(!open)}} className={cls.menu_data}>
-            <AiOutlineMenu />
-          </div>
+          {/*<div className={cls.rightNav}>*/}
+            {/*<div className={cls.navRightIcons}>*/}
+            {/*  <FiPlus />*/}
+            {/*  <IoMdArrowDropdown />*/}
+            {/*</div>*/}
+            <div onClick={() => {setOpen(!open)}} className={cls.menu_data}>
+              <GiTBrick  />
+              <FiBell className={cls.bell} />
+
+            </div>
+          {/*</div>*/}
         </div>
 
         <div className={cls.search_result_data}>
