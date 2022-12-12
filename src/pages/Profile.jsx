@@ -5,7 +5,7 @@ import { endpoints } from '../configs'
 import { BsDot } from 'react-icons/bs'
 import {Link, Outlet} from 'react-router-dom';
 import { MyProfileList } from '../utils'
-import Test from '../Test'
+import Test from '../components/Header'
 
 
 const Profile = () => {

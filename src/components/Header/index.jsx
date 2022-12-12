@@ -3,8 +3,8 @@ import cls from './Test.module.scss'
 import { BsGithub } from 'react-icons/bs'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
-import { MyProfileList, NavList, ProfileList } from '../utils'
-import { endpoints } from '../configs'
+import { ProfileList } from '../../utils'
+import { endpoints } from '../../configs'
 
 const Test = () => {
   const [open , setOpen] = useState(false)
@@ -51,17 +51,9 @@ const Test = () => {
               onChange={e => setUserName(e.target.value)}
             />
           </div>
-
-{/* 
-          <div className={cls.dark_mode_btn}>
-            <BlackThemeBtn/>
-          </div> */}
-
-
           <div onClick={() => {setOpen(!open)}} className={cls.menu_data}>
             <AiOutlineMenu />
           </div>
-
         </div>
 
         <div className={cls.search_result_data}>
@@ -91,7 +83,6 @@ const Test = () => {
             </ul>
           </div>
         </div>
-
       </div>
   )
 }

@@ -5,7 +5,7 @@ import { MdInsertEmoticon, MdOutlinePeople } from 'react-icons/md';
 import { BsDot } from 'react-icons/bs';
 import cls from './scss/UserMore.module.scss'
 import { ProfileList } from './../utils/index';
-import Test from '../Test';
+import Test from '../components/Header';
 
 
 

@@ -49,7 +49,7 @@ const Menu = () => {
                 refuteSearche.length < 3 ? '' :  userNameData && userNameData.map(item => {
                   return(
                     <li key={item.id}>
-                      <Link onClick={clearInput} to={`/users/${item.login}`}> <a>{item.login}</a></Link>
+                      <Link onClick={clearInput} to={`/users/${item.login}`}> <p>{item.login}</p></Link>
                     </li>
                   )
                 })
