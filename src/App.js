@@ -16,7 +16,7 @@ function App() {
         <Route path='/' element={<Profile />} >
           <Route path='/myfolowing' element={<MyFolowing />} />
           <Route path='/myfolowers' element={<MyFolowers />} />
-          <Route path='/repositories' element={<MyRepositories />} />
+          <Route path='/myrepositories' element={<MyRepositories />} />
 
         </Route>
 
