@@ -1,6 +1,7 @@
 
 import { TbBook, TbBook2 } from 'react-icons/tb';
 import { AiOutlineInbox } from 'react-icons/ai';
+import { FiBox, FiStar } from 'react-icons/fi';
 
 export const NavList = [
   {
@@ -97,18 +98,52 @@ export const ProfileList = [
   {
     id:3,
     icons:<AiOutlineInbox/>,
-    title:'Stars',
-    path:"stars",
+    title:'Projects',
+    path:"projects",
   },
   {
     id:4,
-    icons:<AiOutlineInbox/>,
-    title:'Stars',
-    path:"stars",
+    icons:<FiBox/>,
+    title:'Packages',
+    path:"packages",
   },
   {
     id:5,
+    icons:<FiStar/>,
+    title:'Stars',
+    path:"stars",
+  },
+
+]
+
+export const MyProfileList = [
+  {
+    id:1,
+    icons:<TbBook/>,
+    title:'Overview',
+    path:"overview",
+  },
+  {
+    id:2,
+    icons:<TbBook2/>,
+    title:'Repositories',
+    path:"myrepositories",
+  },
+  {
+    id:3,
     icons:<AiOutlineInbox/>,
+    title:'Projects',
+    path:"projects",
+  },
+  {
+    id:4,
+    icons:<FiBox/>,
+    title:'Packages',
+    path:"packages",
+  },
+  {
+    id:5,
+    icons:<FiStar/>,
     title:'Stars',
     path:"stars",
   },

@@ -1,0 +1,22 @@
+.userFollowingContainer{
+  max-width: 780px;
+  height: 100vh;
+  margin: 10px 0 0 32%;
+  .cardContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 90px;
+    .image{
+      width: 100px;
+      height: 100px;
+      img{
+        width: 80px;
+        height: 80px;
+      }
+    }
+
+  }
+
+}

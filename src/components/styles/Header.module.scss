@@ -1,7 +1,6 @@
 
-
 .container{
-  max-width: 1450px;
+  max-width: 1540px;
   margin: 0 auto;
 
   .navBar{
@@ -26,6 +25,7 @@
         width: 260px;
         height: 34px;
         background-color: black;
+        color: white;
         margin-left: 10px;
         font-size: 14px;
         padding-left: 10px;
@@ -36,6 +36,25 @@
       input:focus {
         width: 400px;
         transition: width ease-out .3s;
+      }
+
+    }
+    .search_result_data{
+      position: absolute;
+      height: 100%;
+      margin: 100px 0 0 50px;
+      .searche_result_list{
+        background-color: rgba(0,0,0,0.8);
+        list-style: none;
+
+        li{
+          min-width: 100px;
+          color: white;
+          a{
+            color: white;
+          }
+
+        }
       }
     }
     .navCenter{
@@ -77,3 +96,36 @@
   }
 
 }
+
+@media screen and (max-width:930px) {
+  .navBar{
+
+    .navCenter{
+      .navList{
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:720px) {
+  .navBar{
+    .leftNav{
+      input{
+        max-width: 200px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:520px) {
+  .navBar{
+    width: 120%;
+    .leftNav{
+      input{
+        display: none;
+      }
+    }
+  }
+}
+

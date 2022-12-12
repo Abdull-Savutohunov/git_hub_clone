@@ -13,12 +13,22 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    .profilenav{
+      max-width: 16px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      .nav{
+        align-items: center;
+      }
+    }
     p{
       cursor: pointer;
       width: 90%;
       padding:0;
       margin: 5px;
-      
       a{
         text-decoration: none;
         color: white;
@@ -30,6 +40,7 @@
       &:hover{
         background-color: rgb(0, 136, 255);
       }
+
     }
 
     .menuStatus{

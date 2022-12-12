@@ -3,7 +3,7 @@ import {AiOutlineGithub} from 'react-icons/ai'
 import { FooterList } from '../utils'
 import { Link } from 'react-router-dom';
 import { FooterListSecond, FooterListThird } from './../utils/index';
-import './scss/Footer.scss'
+import './styles/Footer.scss'
 
 
 const Footer = () => {

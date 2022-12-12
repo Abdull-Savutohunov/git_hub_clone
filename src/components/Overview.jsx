@@ -1,8 +1,10 @@
 import React from 'react'
-import './scss/Overview.scss'
+import './styles/Overview.scss'
 import { lists } from './../utils/lists';
+import { endpoints } from './../configs/index';
 
 const Overview = () => {
+  const [myRepository, setMyRepository] = React.useState('')
   return (
     <div>
       <div className="overview">
@@ -21,7 +23,7 @@ const Overview = () => {
           </div>
           <div className="repositoriesContainer">
             {
-              lists.map((repo , i) => (
+              endpoints.GetRepostOfUser((repo , i) => (
                 <div className="repoBox" key={i}>
                   <div className="repositoriesTop">
                     <h3>{repo.name}</h3>

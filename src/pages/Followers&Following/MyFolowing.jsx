@@ -1,5 +1,5 @@
 import React from 'react'
-import { endpoints } from './../configs/index';
+import { endpoints } from '../../configs';
 import './scss/MyFolowing.scss'
 
 
@@ -9,7 +9,7 @@ function MyFolowing() {
   React.useEffect(() => {
     endpoints.FollowingOfUser('Abdull-Savutohunov').then(r => {
       setMyFolowing(r.data)
-      console.log(r.data);
+      // console.log(r.data);
     })
   }, [])
 
@@ -17,13 +17,13 @@ function MyFolowing() {
     <div>
       <div className="myfollowingContainer">
         {myFolowing && myFolowing.map(item =>  {
-          console.log(item);
+          // console.log(item);
           return(
-            <div className="cardContainer">
+            <div key={item.id} className="cardContainer">
               <div className="image">
                 <img src={item.avatar_url} alt="" />
               </div>
-              <h5>{item.login}</h5>
+              <a href={item.html_url}>{item.login}</a>
     
             </div>
           )

@@ -1,8 +1,40 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { Link } from 'react-router-dom';
-import './scss/Menu.scss'
+import './styles/Menu.scss'
+import {endpoints} from "../configs";
+import cls from "./styles/Header.module.scss";
+import {MyProfileList} from "../utils";
 
 const Menu = () => {
+  const [userName , setUserName] = useState('')
+  const [ userNameData, setUserNameData ] = useState('')
+  const refuteSearche = useRefute(userName , 400)
+
+  function useRefute(value ,detain ){
+    const [refuteValue, setRefuteValue] = useState(value)
+
+    useEffect(() => {
+      const handler = setTimeout(() => {
+        setRefuteValue(value);
+      }, detain);
+      return () => {
+        clearTimeout(handler);
+      };
+    },[value, detain]);
+    return refuteValue;
+  }
+  useEffect(() => {
+    if(refuteSearche.length ){
+      endpoints.SearchUser(refuteSearche).then(r => {
+        setUserNameData(r.data.items)
+      })
+    }
+  },[refuteSearche, setUserNameData] )
+
+  const clearInput = () => {
+    setUserName('')
+  };
+
   return (
     <div>
       <div className="menu">
@@ -10,25 +42,32 @@ const Menu = () => {
           <p>Sign in</p>
           <div className="lineThree"/>
           <div className="menuStatus">
-            <input type="text" name="" id="" placeholder='Set status' />
+            <input type="text" onChange={e => setUserName(e.target.value)} />
+          </div>
+          <div className={cls.search_result_data}>
+            <ul className={cls.searche_result_list}>
+              {
+                refuteSearche.length < 3 ? '' :  userNameData && userNameData.map(item => {
+                  return(
+                    <li key={item.id}>
+                      <Link onClick={clearInput} to={`/users/${item.login}`}> <a>{item.login}</a></Link>
+                    </li>
+                  )
+                })
+              }
+            </ul>
           </div>
           <div className="lineThree"/>
-          <p>
-            <Link to='/profile'>Your profile</Link>
-          </p>
-          <p>Your repositories</p>
-          <p>Your codespaces</p>
-          <p>Your organizations</p>
-          <p>Your projects</p>
-          <p>Your stars</p>
-          <p>Your gists</p>
-          <div className="lineThree"/>
-          <p>Upgrade </p>
-          <p>Future preview </p>
-          <p>Help </p>
-          <p>Settings </p>
-          <div className="lineThree"/>
-          <p>Sign out</p>
+          <p><Link to='/profile'>Your profile</Link></p>
+          <div className='profilenav'>
+            {
+              MyProfileList.map(item => (
+                <div key={item.id}>
+                  <Link style={{display:'flex' , alignItems:'center' , gap:'10px'}} to={item.path} className="nav"><div style={{alignItems:'center'}} className="profileIcon">{item.icons}</div><h3>{item.title}</h3></Link>
+                </div>
+              ))
+            }
+          </div>
         </div>
       </div>
     </div>

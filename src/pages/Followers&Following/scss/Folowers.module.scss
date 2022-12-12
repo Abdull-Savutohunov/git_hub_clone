@@ -1,0 +1,23 @@
+.userFollowersContainer{
+  max-width: 880px;
+  height: 100vh;
+  margin: -180% 0 0 130%;
+  .cardContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 90px;
+    .image{
+      width: 100px;
+      height: 100px;
+      img{
+        width: 80px;
+        height: 80px;
+      }
+    }
+  }
+  h5{
+    margin-left: 100px;
+  }
+
+}

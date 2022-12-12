@@ -1,5 +1,5 @@
-import React, {useState , useEffect } from 'react'
-import cls from './scss/Header.module.scss'
+import React , {useState , useEffect } from 'react'
+import cls from './styles/Header.module.scss'
 import {AiOutlineGithub} from 'react-icons/ai'
 import { FiBell, FiPlus } from 'react-icons/fi'
 import { IoMdArrowDropdown } from 'react-icons/io'
@@ -8,20 +8,36 @@ import { Link } from 'react-router-dom';
 import Menu from './Menu';
 import { endpoints } from './../configs/index';
 
-function Header() {
-  const [show, setShow] = React.useState(false)
+const Header = () => {
+  const [show, setShow] = useState(false)
   const [userName , setUserName] = useState('')
-  const { userNameData, setUserNameData } = useState('')
-  console.log(userNameData);
+  const [ userNameData, setUserNameData ] = useState('')
+  const refuteSearche = useRefute(userName , 400)
 
+  function useRefute(value ,detain ){
+    const [refuteValue, setRefuteValue] = useState(value)
+
+    useEffect(() => {
+      const handler = setTimeout(() => {
+        setRefuteValue(value);
+      }, detain);
+      return () => {
+        clearTimeout(handler);
+      };
+    },[value, detain]);
+    return refuteValue;
+  }
   useEffect(() => {
-    if(userName.length ){
-      endpoints.SearchUser(userName).then(res => {      
-        setUserNameData(res.data.items)
-    })
+    if(refuteSearche.length ){
+      endpoints.SearchUser(refuteSearche).then(r => {
+        setUserNameData(r.data.items)
+      })
     }
-  }, [userName])
-  // console.log(userName);
+  },[refuteSearche, setUserNameData] )
+
+  const clearInput = () => {
+    setUserName('')
+  };
 
   return (
     <>
@@ -35,6 +51,20 @@ function Header() {
               <input type="text" onChange={e => setUserName(e.target.value)} />
             </div>
           </div>
+          <div className={cls.search_result_data}>
+              <ul className={cls.searche_result_list}>
+                {
+                  refuteSearche.length < 3 ? '' :  userNameData && userNameData.map(item => {
+                    return(
+                      <li key={item.id}>
+                        <Link onClick={clearInput} to={`/users/${item.login}`}> <a>{item.login}</a></Link>
+                      </li>
+                    )
+                  })
+                }
+              </ul>
+          </div>
+
           <div className={cls.navCenter}>
             {
               NavList.map((item) => (
@@ -55,10 +85,9 @@ function Header() {
               <IoMdArrowDropdown />
             </div>
           </div>
-            {
-              show && <Menu/>
-            }
-
+          {
+            show && <Menu/>
+          }
         </div>
       </div>
 
