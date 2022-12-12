@@ -11,7 +11,7 @@ const MyRepositories = () => {
   // const PAGE_SIZE = 6
   // const TOTAL_PAGE = Math.ceil(reposData?.length / PAGE_SIZE)
 
-  React.useEffect(() => {
+  useEffect(() => {
     endpoints.GetRepostOfUser('Abdull-Savutohunov').then(r => {
       setMyRepo(r.data)
     })

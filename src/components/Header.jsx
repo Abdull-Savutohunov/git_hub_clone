@@ -3,10 +3,13 @@ import cls from './styles/Header.module.scss'
 import {AiOutlineGithub} from 'react-icons/ai'
 import { FiBell, FiPlus } from 'react-icons/fi'
 import { IoMdArrowDropdown } from 'react-icons/io'
-import { NavList } from './../utils/index';
+import { NavList, ProfileList } from './../utils/index';
 import { Link } from 'react-router-dom';
-import Menu from './Menu';
+import Menu from './Menu/Menu';
 import { endpoints } from './../configs/index';
+import MyMenu from './Menu/MyMenu';
+
+// console.log(ProfileList);
 
 const Header = () => {
   const [show, setShow] = useState(false)
@@ -49,6 +52,18 @@ const Header = () => {
             </Link>
             <div>
               <input type="text" onChange={e => setUserName(e.target.value)} />
+              
+              <ul className={cls.searche_result_list}>
+                {
+                  refuteSearche.length < 3 ? '' :  userNameData && userNameData.map(item => {
+                    return(
+                      <li key={item.id}>
+                        <Link onClick={clearInput} to={`/users/${item.login}`}> <a>{item.login}</a></Link>
+                      </li>
+                    )
+                  })
+                }
+              </ul>
             </div>
           </div>
           <div className={cls.search_result_data}>
@@ -86,11 +101,10 @@ const Header = () => {
             </div>
           </div>
           {
-            show && <Menu/>
+            show && <Menu className={cls.menuOpen} />
           }
         </div>
       </div>
-
     </>
   )
 }

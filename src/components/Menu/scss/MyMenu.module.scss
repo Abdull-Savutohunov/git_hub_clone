@@ -2,11 +2,11 @@
   background-color: grey;
   position: absolute;
   top: 44px;
-  right: 30px;
+  // right: 300px; 
   border-radius: 10px;
   border: 1px solid white;
   font-size: 14px;
-  width: 180px;
+  width: 200px;
 
   .menuContainer{
     display: flex;
@@ -49,7 +49,7 @@
         border: 1px solid black;
         border-radius: 4px;
         padding: 8px;
-        
+
       }
     }
 

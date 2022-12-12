@@ -5,6 +5,7 @@ import cls from './scss/Folowers.module.scss'
 
 const Folowers = () => {
   const [userFolowers , setUserFolowers] = React.useState('')
+  console.log(userFolowers);
 
   const {login} = useParams()
   React.useEffect(() => {
@@ -22,9 +23,7 @@ const Folowers = () => {
                 <img src={item.avatar_url} alt="" />
               </div>
               <a href={item.html_url}>{item.login}</a>
-
             </div>
-
           )
         }) }
       </div>

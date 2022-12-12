@@ -1,0 +1,156 @@
+.menu{
+  background-color: grey;
+  position: relative;
+  z-index: 10;
+  margin-top: 420px;
+  margin-right: -20px;
+  border-radius: 10px;
+  border: 1px solid white;
+  font-size: 14px;
+  width: 180px;
+
+  .menuContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .profilenav{
+      max-width: 16px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      .nav{
+        align-items: center;
+      }
+    }
+    p{
+      cursor: pointer;
+      width: 90%;
+      padding:0;
+      margin: 5px;
+      a{
+        text-decoration: none;
+        color: white;
+      }
+      &:last-child{
+        margin-bottom: 8px;
+        margin: 6px 16px 6px;
+      }
+      &:hover{
+        background-color: rgb(0, 136, 255);
+      }
+
+    }
+
+    .menuStatus{
+      input{
+        background-color: transparent;
+        border: 1px solid black;
+        border-radius: 4px;
+        padding: 8px;
+        
+      }
+    }
+    .search_result_data{
+      position: absolute;
+      height: 100%;
+      margin: 100px 0 0 50px;
+      .searche_result_list{
+        background-color: rgba(0,0,0,0.8);
+        list-style: none;
+
+        li{
+          min-width: 100px;
+          color: white;
+          a{
+            color: white;
+          }
+
+        }
+      }
+    }
+
+
+  }
+}
+
+@media screen and (max-width:425px) {
+
+  .menu{
+    background-color: grey;
+    position: absolute;
+    z-index: 600;
+    margin-top: 44px;
+    border-radius: 10px;
+    border: 1px solid white;
+    font-size: 14px;
+    width: 180px;
+    margin-left: -180px;
+    .menuContainer{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .profilenav{
+        max-width: 16px;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        .nav{
+          align-items: center;
+        }
+      }
+      p{
+        cursor: pointer;
+        width: 90%;
+        padding:0;
+        margin: 5px;
+        a{
+          text-decoration: none;
+          color: white;
+        }
+        &:last-child{
+          margin-bottom: 8px;
+        }
+        &:hover{
+          background-color: rgb(0, 136, 255);
+        }
+  
+      }
+  
+      .menuStatus{
+        input{
+          background-color: transparent;
+          border: 1px solid black;
+          border-radius: 4px;
+          padding: 3px;
+          
+        }
+      }
+      .search_result_data{
+        position: absolute;
+        height: 100%;
+        margin: 100px 0 0 50px;
+        .searche_result_list{
+          background-color: rgba(0,0,0,0.8);
+          list-style: none;
+  
+          li{
+            min-width: 100px;
+            color: white;
+            a{
+              color: white;
+            }
+  
+          }
+        }
+      }
+  
+  
+    }
+  }
+}

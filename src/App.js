@@ -11,16 +11,18 @@ import UserMore from './pages/UserMore';
 import Folowers from './pages/Followers&Following/Folowers';
 import Repositories from './components/Repositories/Repositories';
 import MyRepositories from './components/Repositories/MyRepositories';
+import Test from './Test';
 
 function App() {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
+      {/* <Test/> */}
       <Routes>
         <Route path='/' element={<Profile />} >
           <Route path='/myfolowing' element={<MyFolowing />} />
           <Route path='/myfolowers' element={<MyFolowers />} />
-          <Route path='/myrepositories' element={<MyRepositories />} />
+          <Route path='/repositories' element={<MyRepositories />} />
 
         </Route>
 
@@ -28,8 +30,11 @@ function App() {
           <Route path='folowing' element={<Folowing />} />
           <Route path='folowers' element={<Folowers />} />
           {/* <Route path="stars" element={<Stars />} />     */}
-          <Route path="repositories" element={<Repositories/>} />      
+          <Route path="repositories" element={<Repositories/>} />
         </Route>
+
+        {/* <Route path="/header" element={<Test/>} /> */}
+
 
       </Routes>
     </>

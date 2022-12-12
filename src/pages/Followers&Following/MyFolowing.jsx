@@ -21,10 +21,10 @@ function MyFolowing() {
           return(
             <div key={item.id} className="cardContainer">
               <div className="image">
-                <img src={item.avatar_url} alt="" />
-              </div>
-              <a href={item.html_url}>{item.login}</a>
-    
+                  <img src={item.avatar_url} alt="" />
+                </div>
+                <a href={item.html_url}>{item.login}</a>
+
             </div>
           )
         }) }

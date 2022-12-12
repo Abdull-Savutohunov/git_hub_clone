@@ -1,11 +1,10 @@
 import React, {useEffect, useState} from 'react'
 import { Link } from 'react-router-dom';
-import './styles/Menu.scss'
-import {endpoints} from "../configs";
-import cls from "./styles/Header.module.scss";
-import {MyProfileList} from "../utils";
+import {endpoints} from "../../configs/index";
+import cls from "./scss/MyMenu.module.scss";
+import {MyProfileList} from "../../utils/index";
 
-const Menu = () => {
+const MyMenu = () => {
   const [userName , setUserName] = useState('')
   const [ userNameData, setUserNameData ] = useState('')
   const refuteSearche = useRefute(userName , 400)
@@ -37,33 +36,33 @@ const Menu = () => {
 
   return (
     <div>
-      <div className="menu">
-        <div className="menuContainer">
+      <div className={cls.menu}>
+        <div className={cls.menuContainer}>
           <p>Sign in</p>
-          <div className="lineThree"/>
-          <div className="menuStatus">
+          <div className={cls.lineThree}/>
+          <div className={cls.menuStatus}>
             <input type="text" onChange={e => setUserName(e.target.value)} />
           </div>
           <div className={cls.search_result_data}>
             <ul className={cls.searche_result_list}>
               {
-                refuteSearche.length < 3 ? '' :  userNameData && userNameData.map(item => {
+                refuteSearche.length < 3 ? '' : userNameData && userNameData.map(item => {
                   return(
                     <li key={item.id}>
-                      <Link onClick={clearInput} to={`/users/${item.login}`}> <a>{item.login}</a></Link>
+                      <Link onClick={clearInput} to={`/users/${item.login}`}><a href='#'>{item.login}</a></Link>
                     </li>
                   )
                 })
               }
             </ul>
           </div>
-          <div className="lineThree"/>
+          <div className={cls.lineThree}/>
           <p><Link to='/'>Your profile</Link></p>
-          <div className='profilenav'>
+          <div className={cls.profilenav}>
             {
               MyProfileList.map(item => (
                 <div key={item.id}>
-                  <Link style={{display:'flex' , alignItems:'center' , gap:'10px'}} to={item.path} className="nav"><div style={{alignItems:'center'}} className="profileIcon">{item.icons}</div><h3>{item.title}</h3></Link>
+                  <Link style={{display:'flex' , alignItems:'center' , gap:'10px'}} to={item.path} className={cls.nav}><div style={{alignItems:'center'}} className={cls.profileIcon}>{item.icons}</div><h3>{item.title}</h3></Link>
                 </div>
               ))
             }
@@ -74,4 +73,4 @@ const Menu = () => {
   )
 }
 
-export default Menu
+export default MyMenu

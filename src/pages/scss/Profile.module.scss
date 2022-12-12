@@ -14,21 +14,21 @@
   max-width: 1216px;
   margin: 0 auto;
   display: flex;
+  flex-wrap:wrap ;
   top: 2rem;
 
   .right{
-    width: 600px;
-    margin:0;
-    .allPages{
-    }
+    width: 65%;
+    margin:0 auto;
+
   }
   .left{
     width: 300px;
-    margin:  0;
+    margin: 0 auto;
     .image{
       height: 296px;
       width: 296px;
-      position: relative;
+      z-index: 0;
       margin: 0 ;
       img{
         width: 100%;
@@ -40,8 +40,9 @@
     .emoticonBox{
       height: 30px;
       width: 30px;
-      position: absolute;
-      top: 210px;
+      z-index: 3;
+      margin-top: -90px;
+      margin-left: 280px;
       background-color: black;
       border-radius: 50%;
       border: 1px solid wheat;
@@ -49,11 +50,9 @@
       justify-content: center;
       align-items: center;
       color: wheat;
-  
       .emoticon{
         width: 20px;
         height: 20px;
-  
       }
     }
     .leftDetails{ 
@@ -100,170 +99,11 @@
   }
 }
 
-@media screen and (max-width:600px) {
-
+@media screen and (max-width:768px) {
   .profilenav{
+
     display: none;
   }
-  .container{
-    width: 100%;
-    margin: 0 auto;
-    .right{
-      width: 600px;
-      margin: 400px 0 0 -500px;
-      .allPages{
-      }
-    }
-    .left{
-      max-height: 100vh;
-      width: 100%;
-      margin:0 0 0 20%;
-      .image{
-        height: 196px;
-        width: 196px;
-        position: relative;
-        margin: 0 auto;
-        img{
-          width: 100%;
-          object-fit: contain;
-          border-radius: 50%;
 
-        }
-      }
-      .emoticonBox{
-        height: 30px;
-        width: 30px;
-        position: absolute;
-        top: 130px;
-        background-color: black;
-        border-radius: 50%;
-        border: 1px solid wheat;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: wheat;
-        .emoticon{
-          width: 20px;
-          height: 20px;
-
-        }
-      }
-      .leftDetails{
-        width: 75%;
-        margin: 0 auto;
-        color: rgb(29, 28, 28);
-        h2{
-          font-size: 20px;
-        }
-      }
-    }
-  }
-}
-@media screen and (max-width:426px) {
-  .container{
-    width: 100%;
-    .right{
-      width: 70%;
-      margin: 350px -100%;
-      .allPages{
-      }
-    }
-    .left{
-      width: 400px;
-      margin:10px 20%;
-      .image{
-        height: 196px;
-        width: 196px;
-        position: relative;
-        margin: 0 auto;
-        img{
-          width: 100%;
-          object-fit: contain;
-          border-radius: 50%;
-
-        }
-      }
-      .emoticonBox{
-        height: 30px;
-        width: 30px;
-        position: absolute;
-        top: 130px;
-        background-color: black;
-        border-radius: 50%;
-        border: 1px solid wheat;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: wheat;
-        .emoticon{
-          width: 20px;
-          height: 20px;
-
-        }
-      }
-      .leftDetails{
-        width: 75%;
-        margin: 0 auto;
-        color: rgb(29, 28, 28);
-        h2{
-          font-size: 20px;
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width:326px) {
-  .container{
-    width: 100%;
-    .right{
-      width: 70%;
-      margin: 350px -120%;
-      .allPages{
-      }
-    }
-    .left{
-      width: 400px;
-      margin:10px 20%;
-      .image{
-        height: 196px;
-        width: 196px;
-        position: relative;
-        margin: 0 auto;
-        img{
-          width: 100%;
-          object-fit: contain;
-          border-radius: 50%;
-
-        }
-      }
-      .emoticonBox{
-        height: 30px;
-        width: 30px;
-        position: absolute;
-        top: 130px;
-        background-color: black;
-        border-radius: 50%;
-        border: 1px solid wheat;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: wheat;
-        .emoticon{
-          width: 20px;
-          height: 20px;
-
-        }
-      }
-      .leftDetails{
-        width: 75%;
-        margin: 0 auto;
-        color: rgb(29, 28, 28);
-        h2{
-          font-size: 20px;
-        }
-      }
-    }
-  }
 }
 
